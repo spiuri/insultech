@@ -4,7 +4,7 @@ session_start();
 $email = $_POST['email'];
 $passwd  = md5($_POST['password']);
 
-$conexao = mysqli_connect("localhost","root","","PurchasesDB") or print (mysqli_error());
+$conexao = mysqli_connect("localhost","root","","PurchasesDB");
 
 $query = "SELECT * FROM customers WHERE email='$email' and passwd= '$passwd'";
 

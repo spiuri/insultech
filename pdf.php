@@ -17,24 +17,28 @@ $html .= '<strong>Nome: </strong>'.$name.'.<br>';
 $html .= '<strong>Tipo Sanguineo: </strong>'. $sangue.'.<br>';
 $html .= '<strong>Data de Nasc: </strong>'. $nasc.'.<br>';
 $html .= '<strong>Gênero: </strong>'. $genero.'.<br>';
-$html .='<table class="table">';
+$html .='<table  style="
+
+border-collapse: collapse;
+ border: 1px solid black;
+" >';
 $html .='<thead>';
 $html .='<tr>';
     
-$html .='<th scope="col">Periodo</th>';
-$html .='<th scope="col">Glicemia</th>';
-$html .='<th scope="col">Insulina<th>';
-$html .='<th scope="col"><th>';
-$html .='<th scope="col"><th>';
+$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Periodo</th>';
+$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Glicemia</th>';
+$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Insulina</th>';
+
 
 $html .='</tr>';
 $html .='</thead>';
 $html .='<tbody>';
-$html .='<tr>';
+
 while($linha = mysqli_fetch_array($resultado)){
-$html.='<td>'. $linha['description'].'</td>';
-$html.='<td>'. $linha['amount'].'</td>';
-$html.='<td>'. $linha['insulina'].'</td></tr>';
+    $html .='<tr>';
+$html.='<td style="border: 1px  solid black;padding: 15px;text-align: left;">'. $linha['description'].'</td>';
+$html.='<td style="border: 1px solid black;padding: 15px;text-align: left;">'. $linha['amount'].'</td>';
+$html.='<td style="border: 1px solid black;padding: 15px;text-align: left;">'. $linha['insulina'].'</td></tr>';
 
 }
 
