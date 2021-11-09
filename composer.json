@@ -1,0 +1,20 @@
+{
+    "name": "iuri/htdocs",
+    "description": "tcc",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Iuri\\Htdocs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "spiuri",
+            "email": "61064112+spiuri@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "dompdf/dompdf": "dev-master"
+    }
+}
