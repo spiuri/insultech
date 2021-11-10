@@ -10,7 +10,7 @@
         if ($_GET['msg'] == "OK"){
     ?>
             <div class="alert alert-info" role="alert">
-                <?php echo "<strong> Registered Successfull. Please, login.</strong>"; ?>
+                <?php echo "<strong> Registro feito com sucesso. Por favor faça seu login.</strong>"; ?>
             </div>
     <?php
 
@@ -20,7 +20,7 @@
 
             ?>
             <div class="alert alert-danger" role="alert">
-                <?php echo "<strong>Incorrect username (your e-mail) or password.</strong>"; ?>
+                <?php echo "<strong>Senha ou email incorretos.</strong>"; ?>
             </div>
     <?php
 
