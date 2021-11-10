@@ -25,9 +25,9 @@ border-collapse: collapse;
 $html .='<thead>';
 $html .='<tr>';
     
-$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Periodo</th>';
-$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Glicemia</th>';
-$html .='<th style="background-color: rgb(110, 226, 182); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Insulina</th>';
+$html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Periodo</th>';
+$html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Glicemia</th>';
+$html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Insulina</th>';
 
 
 $html .='</tr>';
