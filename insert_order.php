@@ -70,7 +70,7 @@ if (!empty($_POST['description']) && !empty($_POST['amount'])){
 
 
 
-    $conexao = mysqli_connect("localhost","root","","PurchasesDB") or print (mysqli_error());
+    $conexao = mysqli_connect("localhost","root","","PurchasesDB");
 
     $query = "INSERT INTO orders (description,amount,customer_id,insulina) VALUES ('$description','$amount', '$customer_id', '$glicimia')";
 
