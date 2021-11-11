@@ -31,7 +31,7 @@
         {
     ?>
             <div class="alert alert-danger" role="alert">
-                <?php echo "<strong> It is not possible to connect the database server. <strong><br>";?>
+                <?php echo "<strong>O banco de dados não foi achado. <strong><br>";?>
             </div>
     <?php
         }
