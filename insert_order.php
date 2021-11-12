@@ -51,13 +51,15 @@
 
 
 
-if (!empty($_POST['description']) && !empty($_POST['amount'])){
+if ( !empty($_POST['amount'])){
 
     $description = $_POST['description'];
     $amount = $_POST['amount'];
     $customer_id = $_SESSION['id'];
-  
-    if ($amount >=70 && $amount<=150) {
+  if($amount<70){
+$glicimia =0;
+  }
+    elseif ($amount >=70 && $amount<=150) {
       $glicimia = 8;
         }
         elseif($amount >=151 && $amount<=200){
@@ -93,14 +95,21 @@ if (!empty($_POST['description']) && !empty($_POST['amount'])){
 <form action="insert_order.php" method="post">
         <div class="form-group">
           <div class="col-md-4 mb-3">
-            <label for="nameInputLabel">Description:</label>
-            <input type="text" class="form-control" id="nameInputLabel" name="description">
+            <label for="nameInputLabel">Refeição:</label>
+          <!--<input type="text" class="form-control" id="nameInputLabel" name="description">-->
+          <select style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" class="form-control" id="description" name="description">
+              <option value="Café da manhã">Café da manhã</option>
+              <option value="Almoço">Almoço</option>
+              <option value="Lanche da tarde">Lanche da tarde</option>
+              <option value="Jantar">Jantar</option>
+              
+            </select>
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-md-4 mb-3">
-            <label for="emailInputLabel">Amount:</label>
+            <label for="emailInputLabel">Glicemia:</label>
             <input type="text" class="form-control" id="emailInputLabel" name = "amount">
           </div>
         </div>   
