@@ -78,7 +78,6 @@
       </button> 
 </form>
 
-
 <?php
 $conexao = mysqli_connect("localhost","root","","PurchasesDB");
 // test if admin or normal customer to redirect a suitable page.

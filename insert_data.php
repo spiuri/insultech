@@ -12,6 +12,7 @@ $query = "INSERT INTO customers (name,email,passwd,sangue,nasc, genero) VALUES (
 if (mysqli_query($conexao, $query)) {  
     header("Location: login.php?msg=OK");
 } else {
+        
     header("Location: login.php?msg=ERRO");
 }
 
