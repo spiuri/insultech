@@ -18,17 +18,17 @@
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My Orders</a>
+  <a class="navbar-brand" href="#">Edição de Dados</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.php">Voltar <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
+        <a class="nav-link" href="logout.php">Sair</a>
       </li>
        
     </ul>
@@ -37,10 +37,7 @@
 
   <div class="collapse navbar-collapse" id="navbarNav">  
  
-    <span class="navbar-text">
-       Welcome Mr. <?php echo $_SESSION['name'];?>
-    </span>
- 
+  
 </div>
 
 </nav>
@@ -98,21 +95,21 @@ if (!empty($_POST["dataForUpdating"])){
     <form action="update_order.php" method="post">
         <div class="form-group">
           <div class="col-md-4 mb-3">
-            <label for="nameInputLabel">Description:</label>
+            <label for="nameInputLabel">Periodo:</label>
             <input type="text" class="form-control" id="nameInputLabel" name="description" value="<?php echo $linha['description'];?>">
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-md-4 mb-3">
-            <label for="emailInputLabel">Amount:</label>
+            <label for="emailInputLabel">Glicemia:</label>
             <input type="text" class="form-control" id="emailInputLabel" name = "amount" value="<?php echo $linha['amount'];?>">
           </div>
         </div>   
 
         <input type = "hidden" id="inputHidden" name="codeUpdating" value="<?php echo $linha['id']; ?> ">
       
-        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+        <button type="submit" style="margin: 15px;" class="btn btn-primary" name="submit">Salvar</button>
 </form>
 
 

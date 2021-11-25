@@ -22,17 +22,17 @@
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My Orders</a>
+  <a class="navbar-brand" href="#">Histórico</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="">Inicial <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
+        <a class="nav-link" href="logout.php">Sair</a>
       </li>
        
     </ul>
@@ -59,7 +59,7 @@
         <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
       </svg>
 
-      Insert order
+     Inserir valor da glicose
 
 
       </button> 
