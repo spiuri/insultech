@@ -62,7 +62,7 @@ if(!empty($_POST["codeUpdating"])){
           $glicimia = 12;
         }
 
-    $conexao = mysqli_connect("localhost","root","","PurchasesDB") or print (mysqli_error());
+    $conexao = mysqli_connect("localhost","root","","PurchasesDB") ;
     
     $query = "UPDATE orders SET description='$description', amount='$amount', insulina='$glicimia'  WHERE id=$order_id";
      if (mysqli_query($conexao, $query)) {
