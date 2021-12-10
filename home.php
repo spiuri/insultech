@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Main page - Home</title>
+    <title>Histórico</title>
   </head>
   <body>
 <style>
@@ -117,7 +117,7 @@ $id = $_SESSION['id'];
 
 
 
-$query = "SELECT id,description,amount, customer_id, insulina FROM orders WHERE customer_id =$id";
+$query = "SELECT id,description,amount, customer_id, insulina,dia FROM orders WHERE customer_id =$id";
 
 $resultado = mysqli_query($conexao,$query);
 
@@ -128,6 +128,7 @@ $resultado = mysqli_query($conexao,$query);
   <thead>
     <tr>
     
+      <th scope="col">Data</th>
       <th scope="col">Periodo</th>
       <th scope="col">Glicemia</th>
       <th scope="col">Insulina<th>
@@ -142,6 +143,7 @@ $resultado = mysqli_query($conexao,$query);
 
 while($linha = mysqli_fetch_array($resultado)){
     echo "<tr>
+    <td>". date( 'd-m-Y' , strtotime( $linha['dia'] ) ) ."</td>
     <td>".$linha['description']."</td>
     <td>".$linha['amount']."</td>
     <td>".$linha['insulina']." Unidades</td>

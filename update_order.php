@@ -46,25 +46,33 @@
 
 <?php
 
+$id= $_SESSION['id'];
+$conexao = mysqli_connect("localhost","root","","PurchasesDB");
+$query01 = "SELECT * FROM customers WHERE id =$id";
+$executar=mysqli_query($conexao, $query01);
+$linha2=mysqli_fetch_array($executar);
 
 if(!empty($_POST["codeUpdating"])){
     $description = $_POST['description'];
     $amount = $_POST['amount'];
     $order_id = $_POST['codeUpdating'];
-    if ($amount >=70 && $amount<=150) {
-      $glicimia = 8;
+    $data = $_POST['data'];
+    if($amount< $linha2['condicao1']){
+      $glicimia =$linha2['aplicacao1'];
         }
-        elseif($amount >=151 && $amount<=200){
-          $glicimia = 10;
-        }
-
-        elseif($amount >=201 && $amount<=250){
-          $glicimia = 12;
-        }
-
-    $conexao = mysqli_connect("localhost","root","","PurchasesDB");
+          elseif ($amount >=$linha2['codicao2a'] && $amount<=$linha2['codicao2b']) {
+            $glicimia = $linha2['aplicacao2'];
+              }
+              elseif($amount >=$linha2['codicao3a'] && $amount<=$linha2['codicao3b']){
+                $glicimia = $linha2['aplicacao3'];
+              }
+      
+              elseif($amount >=$linha2['codicao4']){
+                $glicimia = $linha2['aplicacao4'];
+              }
+   
     
-    $query = "UPDATE orders SET description='$description', amount='$amount', insulina='$glicimia'
+    $query = "UPDATE orders SET description='$description', amount='$amount', insulina='$glicimia', dia='$data'
     where   id=$order_id";
      if (mysqli_query($conexao, $query)) {
     ?> 
@@ -88,7 +96,7 @@ if (!empty($_POST["dataForUpdating"])){
     $order_id = $_POST['dataForUpdating'];
     $conexao = mysqli_connect("localhost","root","","PurchasesDB");
 
-    $query = "SELECT id,description,amount FROM orders WHERE id=$order_id";
+    $query = "SELECT id,description,amount, dia FROM orders WHERE id=$order_id";
     $resultado = mysqli_query($conexao,$query);  
 
     $linha = mysqli_fetch_array($resultado);
@@ -105,6 +113,7 @@ if (!empty($_POST["dataForUpdating"])){
           <div class="col-md-4 mb-3">
             <label for="emailInputLabel">Glicemia:</label>
             <input type="text" class="form-control" id="emailInputLabel" name = "amount" value="<?php echo $linha['amount'];?>">
+           <br> <input type="date" value="<?php echo $linha['dia']?>" class="form-control" id="data" name="data" required>
           </div>
         </div>   
 
