@@ -55,16 +55,16 @@ $query01 = "SELECT * FROM customers WHERE id =$id";
 $executar=mysqli_query($conexao, $query01);
 
 $linha=mysqli_fetch_array($executar);
-echo $linha['condicao1'].'| ';
-echo $linha['codicao2a'].'| ';;
-echo $linha['codicao2b'].'| ';;
-echo $linha['codicao3a'].'| ';;
-echo $linha['codicao3b'].'| ';;
-echo $linha['codicao4'].'| ';;
-echo $linha['aplicacao1'].'| ';;
-echo $linha['aplicacao2'].'| ';;
-echo $linha['aplicacao3'].'| ';;
-echo $linha['aplicacao4'].'| ';;
+// echo $linha['condicao1'].'| ';
+// echo $linha['codicao2a'].'| ';;
+// echo $linha['codicao2b'].'| ';;
+// echo $linha['codicao3a'].'| ';;
+// echo $linha['codicao3b'].'| ';;
+// echo $linha['codicao4'].'| ';;
+// echo $linha['aplicacao1'].'| ';;
+// echo $linha['aplicacao2'].'| ';;
+// echo $linha['aplicacao3'].'| ';;
+// echo $linha['aplicacao4'].'| ';;
 if ( !empty($_POST['amount'])){
 
     $description = $_POST['description'];

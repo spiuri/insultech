@@ -11,7 +11,11 @@
     <title>Main page - Home</title>
   </head>
   <body>
-
+<style>
+  strong {
+    font-size: 13px;
+  }
+</style>
   
   <?php session_start(); ?> 
   <?php if ($_SESSION['name'] == 'admin'){
@@ -59,7 +63,7 @@
         <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
       </svg>
 
-     Inserir valor da glicose
+     <strong>Inserir valor da glicose</strong>
 
 
       </button> 
@@ -74,7 +78,7 @@
         <path fill-rule="evenodd" d="M13.5 10a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13v-1.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M13 12.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
       </svg>
-     Salvar
+      <strong> Salvar </strong>
       </button> 
 </form>
 <form method = "post" action="edituser.php">
@@ -82,7 +86,16 @@
       <button  type = "submit" class="btn btn-light btn-xs"  data-toggle="modal" data-target="#delete-modal" style="float: left; margin: 5px;">
 
      
-     Editar Usuario
+     <strong>Editar Usuario</strong>
+      </button> 
+</form>
+<form method = "post" action="config.php">
+    
+      <button  type = "submit" class="btn btn-light btn-xs"  data-toggle="modal" data-target="#delete-modal" style="float: left; margin: 5px;">
+
+     
+     <strong>Configuração</strong>
+
       </button> 
 </form>
 
