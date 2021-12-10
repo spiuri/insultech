@@ -77,6 +77,14 @@
      Salvar
       </button> 
 </form>
+<form method = "post" action="edituser.php">
+    
+      <button  type = "submit" class="btn btn-light btn-xs"  data-toggle="modal" data-target="#delete-modal" style="float: left; margin: 5px;">
+
+     
+     Editar Usuario
+      </button> 
+</form>
 
 <?php
 $conexao = mysqli_connect("localhost","root","","PurchasesDB");

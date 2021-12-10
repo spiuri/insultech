@@ -48,31 +48,66 @@
 
 
 <?php
+$id= $_SESSION['id'];
 
+$conexao = mysqli_connect("localhost","root","","PurchasesDB");
+$query01 = "SELECT * FROM customers WHERE id =$id";
+$executar=mysqli_query($conexao, $query01);
 
-
+$linha=mysqli_fetch_array($executar);
+echo $linha['condicao1'].'| ';
+echo $linha['codicao2a'].'| ';;
+echo $linha['codicao2b'].'| ';;
+echo $linha['codicao3a'].'| ';;
+echo $linha['codicao3b'].'| ';;
+echo $linha['codicao4'].'| ';;
+echo $linha['aplicacao1'].'| ';;
+echo $linha['aplicacao2'].'| ';;
+echo $linha['aplicacao3'].'| ';;
+echo $linha['aplicacao4'].'| ';;
 if ( !empty($_POST['amount'])){
 
     $description = $_POST['description'];
     $amount = $_POST['amount'];
     $customer_id = $_SESSION['id'];
-  if($amount<70){
-$glicimia =0;
+
+  if($amount< $linha['condicao1']){
+$glicimia =$linha['aplicacao1'];
   }
-    elseif ($amount >=70 && $amount<=150) {
-      $glicimia = 8;
+    elseif ($amount >=$linha['codicao2a'] && $amount<=$linha['codicao2b']) {
+      $glicimia = $linha['aplicacao2'];
         }
-        elseif($amount >=151 && $amount<=200){
-          $glicimia = 10;
-        }
-
-        elseif($amount >=201 && $amount<=250){
-          $glicimia = 12;
+        elseif($amount >=$linha['codicao3a'] && $amount<=$linha['codicao3b']){
+          $glicimia = $linha['aplicacao3'];
         }
 
+        elseif($amount >=$linha['codicao4']){
+          $glicimia = $linha['aplicacao4'];
+        }
+     
+// if ($amount >=$linha['condicao2a']) {
+//   if ($amount<=$linha['condicao2b']) {
+//      $glicimia = $linha['aplicacao2'];
+//   }
+//     if ($amount>$linha['condicao3a']) {
+//       if ($amount<=$linha['condicao3b']) {
+//       $glicimia =$linha['aplicacao3'];
+//          if ($amount>$linha['condicao4']) {
+//   //if ($glicimia<=250) {
+//        $glicimia = $linha['aplicacao4'];
+//   //}
+// } 
+// } 
+// }
+// }
+
+// elseif ($amount<$linha['condicao1']) {
+//  $glicimia = $linha['aplicacao1'];
+   
+// }
 
 
-    $conexao = mysqli_connect("localhost","root","","PurchasesDB");
+    
 
     $query = "INSERT INTO orders (description,amount,customer_id,insulina) VALUES ('$description','$amount', '$customer_id', '$glicimia')";
 
@@ -110,7 +145,7 @@ $glicimia =0;
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="emailInputLabel">Glicemia:</label>
-            <input type="text" class="form-control" id="emailInputLabel" name = "amount">
+            <input type="text" class="form-control" id="emailInputLabel" name = "amount" required>
           </div>
         </div>   
       

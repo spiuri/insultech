@@ -1,3 +1,14 @@
+<?php 
+session_start();
+
+$conexao = mysqli_connect("localhost","root","","PurchasesDB");
+$name= $_SESSION['name'];
+$sangue = $_SESSION['sangue'];
+$genero = $_SESSION['genero'];
+$nasc = $_SESSION['nasc'];
+$email = $_SESSION['email'];
+$senha = $_SESSION['senha'];
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,15 +19,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Registro</title>
+    <title>Edição usuario</title>
   </head>
   <body>
     
+      <style>
+        body{
+          display: flexbox;
+        }
+      </style>
 
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Registro</a>
+        <a class="navbar-brand" href="#">Edição</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,23 +48,23 @@
 
 
 
-      <form action="insert_data.php" method="post">
+      <form action="update_user.php" method="post">
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="nameInputLabel">Nome:</label>
-            <input type="text" class="form-control" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" id="nameInputLabel" name="name" required>
+            <input type="text" value="<?php echo $name; ?>" class="form-control" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" id="nameInputLabel" name="name">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="emailInputLabel">E-mail:</label>
-            <input type="text" class="form-control" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);"id="emailInputLabel" name = "email" required>
+            <input type="text" class="form-control" value="<?php echo $email;?>" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);"id="emailInputLabel" name = "email">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="passwdInputLabel">Senha:</label>
-            <input type="password" class="form-control" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);"id="passwdInputLabel" name="passwd" required>
+            <input type="password" value="<?php echo $senha; ?>" class="form-control" style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);"id="passwdInputLabel" name="passwd">
           </div>
         </div>
         <div class="form-group">
@@ -69,7 +85,7 @@
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="nasc">Data de nascimento:</label>
-            <input type="date" class="form-control"style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" id="nasc" name="nasc" required>
+            <input type="date" value="<?php echo $nasc; ?>" class="form-control"style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" id="nasc" name="nasc">
           </div>
         </div>
         <div class="form-group">

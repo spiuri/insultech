@@ -1,7 +1,7 @@
 <?php
 $name = $_POST['name'];
 $email = $_POST['email'];
-$passwd  = md5($_POST['passwd']);
+$passwd  = $_POST['passwd'];
 $sangue = $_POST['tiposangue'];
 $nasc = $_POST['nasc'];
 $genero = $_POST['genero'];
