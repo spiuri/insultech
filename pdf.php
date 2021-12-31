@@ -5,7 +5,7 @@ use Dompdf\Dompdf;
 $conexao = mysqli_connect("localhost","root","","PurchasesDB");
 session_start();
 $id = $_SESSION['id'];
-$query = "SELECT id,description,amount, customer_id, insulina FROM orders WHERE customer_id =$id";
+$query = "SELECT id,description,amount, customer_id, insulina,dia FROM orders WHERE customer_id =$id";
 
 $resultado = mysqli_query($conexao,$query);
 $name= $_SESSION['name'];
@@ -25,6 +25,7 @@ border-collapse: collapse;
 $html .='<thead>';
 $html .='<tr>';
     
+$html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 20px;text-align: left;" scope="col">Data</th>';
 $html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Periodo</th>';
 $html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Glicemia</th>';
 $html .='<th style="background-color: rgb(219, 219, 219); border: 1px solid black;height: 50px;padding: 15px;text-align: left;" scope="col">Insulina</th>';
@@ -36,6 +37,7 @@ $html .='<tbody>';
 
 while($linha = mysqli_fetch_array($resultado)){
     $html .='<tr>';
+$html.='<td style="border: 1px  solid black;padding: 15px;text-align: left;">'. date( 'd-m' , strtotime( $linha['dia'] ) ).'</td>';
 $html.='<td style="border: 1px  solid black;padding: 15px;text-align: left;">'. $linha['description'].'</td>';
 $html.='<td style="border: 1px solid black;padding: 15px;text-align: left;">'. $linha['amount'].'</td>';
 $html.='<td style="border: 1px solid black;padding: 15px;text-align: left;">'. $linha['insulina'].'</td></tr>';

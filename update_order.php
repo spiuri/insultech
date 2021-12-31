@@ -77,7 +77,7 @@ if(!empty($_POST["codeUpdating"])){
      if (mysqli_query($conexao, $query)) {
     ?> 
     <div class="alert alert-info" role="alert">
-      <?php echo "<strong>Order has been updated.</strong>"; ?>
+      <?php echo "<strong>Dado Atualizado com sucesso.</strong>"; ?>
     </div>
      
     <?php
@@ -105,7 +105,13 @@ if (!empty($_POST["dataForUpdating"])){
         <div class="form-group">
           <div class="col-md-4 mb-3">
             <label for="nameInputLabel">Periodo:</label>
-            <input type="text" class="form-control" id="nameInputLabel" name="description" value="<?php echo $linha['description'];?>">
+            <select style="box-shadow: 2px 2px 2px rgba(0,0,0, 0.2);" class="form-control" id="description" name="description">
+              <option value="Café da manhã">Café da manhã</option>
+              <option value="Almoço">Almoço</option>
+              <option value="Lanche da tarde">Lanche da tarde</option>
+              <option value="Jantar">Jantar</option>
+              
+            </select>
           </div>
         </div>
 

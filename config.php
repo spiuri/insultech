@@ -46,12 +46,12 @@
             }
     #a1{
         position: absolute;
-        top: 7%;
+        top: 6.5%;
         left: 16%;
     }
     #a4{
         position: absolute;
-        top:26.5%;
+        top:23.5%;
         left: 15%;
     }
 #aplicacao1{
@@ -92,12 +92,12 @@ font-weight: unset;
 }
 #a2{
     position: absolute;
-    top: 13.5%;
+    top: 12%;
     left: 22.5%;
 }
 #a3{
     position: absolute;
-    top: 19%;
+    top: 17%;
     left: 22.5%;
 }
 

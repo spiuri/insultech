@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Nov-2021 às 01:54
+-- Tempo de geração: 10-Dez-2021 às 19:14
 -- Versão do servidor: 10.4.20-MariaDB
 -- versão do PHP: 7.3.29
 
@@ -34,19 +34,25 @@ CREATE TABLE `customers` (
   `passwd` varchar(255) NOT NULL,
   `sangue` varchar(3) DEFAULT NULL,
   `genero` varchar(45) DEFAULT NULL,
-  `nasc` date DEFAULT NULL
+  `nasc` date DEFAULT NULL,
+  `condicao1` int(3) NOT NULL DEFAULT 70,
+  `codicao2a` int(3) NOT NULL DEFAULT 70,
+  `codicao2b` int(3) NOT NULL DEFAULT 150,
+  `codicao3a` int(3) NOT NULL DEFAULT 150,
+  `codicao3b` int(3) NOT NULL DEFAULT 200,
+  `codicao4` int(3) NOT NULL DEFAULT 200,
+  `aplicacao1` int(4) NOT NULL DEFAULT 4,
+  `aplicacao2` int(4) NOT NULL DEFAULT 6,
+  `aplicacao3` int(4) NOT NULL DEFAULT 8,
+  `aplicacao4` int(4) NOT NULL DEFAULT 10
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `customers`
 --
 
-INSERT INTO `customers` (`id`, `name`, `email`, `passwd`, `sangue`, `genero`, `nasc`) VALUES
-(9, 'Iuri Matos', '123@gmail.com', '202cb962ac59075b964b07152d234b70', 'AB+', 'Masculino', '2014-01-08'),
-(10, 'Iuri Matos', 'admin@gmail.com', '202cb962ac59075b964b07152d234b70', 'O+', 'Prefiro não informar', '2022-01-10'),
-(11, 'Iuri Trajano de Matos', 'spiuri123@gmail.com', '202cb962ac59075b964b07152d234b70', 'A+', 'Prefiro não informar', '2021-11-19'),
-(12, 'Arthur lanches', 'iuri12354@gmail.com', '65ded5353c5ee48d0b7d48c591b8f430', 'O-', 'Feminino', '2012-01-12'),
-(13, 'Iuri Trajano de Matos', 'iuri12354@gmail.com', '202cb962ac59075b964b07152d234b70', 'A+', 'Masculino', '2021-11-10');
+INSERT INTO `customers` (`id`, `name`, `email`, `passwd`, `sangue`, `genero`, `nasc`, `condicao1`, `codicao2a`, `codicao2b`, `codicao3a`, `codicao3b`, `codicao4`, `aplicacao1`, `aplicacao2`, `aplicacao3`, `aplicacao4`) VALUES
+(18, 'Matos', 'iuri12354@gmail.com', '132', 'A+', 'Masculino', '2021-12-09', 70, 71, 150, 151, 200, 201, 2, 4, 6, 8);
 
 -- --------------------------------------------------------
 
@@ -59,15 +65,16 @@ CREATE TABLE `orders` (
   `description` varchar(255) NOT NULL,
   `amount` double NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `insulina` int(11) NOT NULL
+  `insulina` int(11) NOT NULL,
+  `dia` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `orders`
 --
 
-INSERT INTO `orders` (`id`, `description`, `amount`, `customer_id`, `insulina`) VALUES
-(32, 'Manha', 150, 10, 8);
+INSERT INTO `orders` (`id`, `description`, `amount`, `customer_id`, `insulina`, `dia`) VALUES
+(93, 'Café da manhã', 110, 18, 4, '2021-11-30');
 
 --
 -- Índices para tabelas despejadas
@@ -94,13 +101,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT de tabela `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Restrições para despejos de tabelas
